@@ -25,4 +25,8 @@ func main() {
 			fmt.Println(len(c), cap(c))
 		}
 	}
+
+	// slice exclude specific element
+	d := []int{1, 2, 3, 4, 5}
+	d = append(d[:2], d[3:]...)
 }
