@@ -29,6 +29,9 @@ func main() {
 	}
 	defer f.Close()
 	printFile(f)
+
+	doSomething()
+	doSomethingWithNoNamedFunc()
 }
 
 func printFile(f *os.File) {
@@ -39,4 +42,19 @@ func printFile(f *os.File) {
 	}
 
 	fmt.Println(string(b[:n]))
+}
+
+func doSomething() {
+	n := 1
+	defer fmt.Println(n)
+
+	n = 2
+}
+func doSomethingWithNoNamedFunc() {
+	n := 1
+	defer func() {
+		fmt.Println(n)
+	}()
+
+	n = 2
 }
