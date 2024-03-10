@@ -21,4 +21,3 @@ func main() {
 
 	fmt.Println(string(b[:n]))
 }
-
