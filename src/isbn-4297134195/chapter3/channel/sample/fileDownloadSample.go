@@ -48,6 +48,7 @@ func main() {
 	ch := make(chan []byte)
 
 	var wg sync.WaitGroup
+
 	wg.Add(1)
 	go downloadCSV(&wg, urls, ch)
 
