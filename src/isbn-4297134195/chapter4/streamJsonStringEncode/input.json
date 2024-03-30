@@ -1,0 +1,8 @@
+{
+  "Name": "Alice",
+  "Data": {
+    "Age": 28,
+    "Job": "Engineer",
+    "Skills": ["C", "Go", "Java"]
+  }
+}
