@@ -1,4 +1,4 @@
-module go-sandbox
+module github.com/sakuyacatcat/go-sandbox
 
 go 1.18
 
