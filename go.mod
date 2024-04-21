@@ -2,7 +2,10 @@ module github.com/sakuyacatcat/go-sandbox
 
 go 1.18
 
-require github.com/labstack/echo/v4 v4.11.4
+require (
+	github.com/julienschmidt/httprouter v1.3.0
+	github.com/labstack/echo/v4 v4.11.4
+)
 
 require (
 	github.com/labstack/gommon v0.4.2 // indirect
