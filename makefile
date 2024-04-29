@@ -7,3 +7,11 @@ build:
 run:
 	echo "Running..."
 	go run $(path)
+
+test:
+	echo "Testing..."
+	go test -v ./...
+
+single-test:
+	echo "Testing..."
+	go test -v ${path}
