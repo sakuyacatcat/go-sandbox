@@ -1,3 +1,6 @@
+BENCH ?= .
+BENCHTIME ?= 5s
+
 .PHONY: build run
 
 build:
@@ -19,3 +22,7 @@ test-coverage:
 single-test:
 	echo "Testing..."
 	go test -v ${path}
+
+bench:
+	echo "Benchmarking..."
+	go test -bench=${BENCH} -benchtime=${BENCHTIME} -benchmem

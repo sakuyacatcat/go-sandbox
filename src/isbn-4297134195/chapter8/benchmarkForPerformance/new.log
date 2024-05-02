@@ -1,0 +1,10 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/sakuyacatcat/go-sandbox/src/isbn-4297134195/chapter8/benchmarkForPerformance
+BenchmarkMakeSomething-10    	   15880	     76471 ns/op	   38349 B/op	    1745 allocs/op
+BenchmarkMakeSomething-10    	   16040	     74514 ns/op	   38349 B/op	    1745 allocs/op
+BenchmarkMakeSomething-10    	   16101	     74534 ns/op	   38349 B/op	    1745 allocs/op
+BenchmarkMakeSomething-10    	   16087	     74301 ns/op	   38349 B/op	    1745 allocs/op
+BenchmarkMakeSomething-10    	   16107	     75184 ns/op	   38349 B/op	    1745 allocs/op
+PASS
+ok  	github.com/sakuyacatcat/go-sandbox/src/isbn-4297134195/chapter8/benchmarkForPerformance	9.906s
