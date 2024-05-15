@@ -18,23 +18,25 @@ type Entry struct {
 }
 
 func findEntries(siteURL string) ([]Entry, error) {
-	resp, err := http.Get(siteURL)
+	res, err := http.Get(siteURL)
 	if err != nil {
+		fmt.Println("Error fetching URL:", err)
 		return nil, err
 	}
-	defer resp.Body.Close()
+	defer res.Body.Close()
 
-	if resp.StatusCode != 200 {
-		return nil, fmt.Errorf("status code error: %d %s", resp.StatusCode, resp.Status)
+	if res.StatusCode != 200 {
+		fmt.Println("Unexpected status code:", res.StatusCode)
+		return nil, fmt.Errorf("Unexpected status code: %d", res.StatusCode)
 	}
 
-	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	doc, err := goquery.NewDocumentFromReader(res.Body)
 	if err != nil {
 		return nil, err
 	}
 
 	doc.Find("ol li a").Each(func(n int, elem *goquery.Selection) {
-		println(elem.Text(), elem.AttrOr("href", ""))
+		fmt.Println(elem.Text(), elem.AttrOr("href", ""))
 	})
 
 	return nil, nil
