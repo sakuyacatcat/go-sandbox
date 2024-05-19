@@ -1,4 +1,4 @@
-module github.com/sakuyacatcat/go-sandbox/src/isbn-4297134195/chapter9
+module github.com/sakuyacatcat/go-sandbox/src/isbn-4297134195/chapter9-cli
 
 go 1.18
 
