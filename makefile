@@ -15,13 +15,13 @@ test:
 	echo "Testing..."
 	go test -v ./...
 
+test-package:
+	echo "Testing..."
+	go test -v ${path}
+
 test-coverage:
 	echo "Testing..."
 	go test -cover ./...
-
-single-test:
-	echo "Testing..."
-	go test -v ${path}
 
 bench:
 	echo "Benchmarking..."
