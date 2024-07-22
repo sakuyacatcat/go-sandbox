@@ -6,10 +6,10 @@ import (
 )
 
 type Server struct {
-	host string
-	port int
+	host    string
+	port    int
 	timeout time.Duration
-	logger *log.Logger
+	logger  *log.Logger
 }
 
 type Option func(*Server)

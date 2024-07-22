@@ -6,14 +6,14 @@ type Speaker interface {
 	Speak() error
 }
 
-type Dog struct {}
+type Dog struct{}
 
 func (d *Dog) Speak() error {
 	fmt.Println("BowWow")
 	return nil
 }
 
-type Cat struct {}
+type Cat struct{}
 
 func (c *Cat) Speak() error {
 	fmt.Println("MeowMeow")

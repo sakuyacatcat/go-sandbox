@@ -18,7 +18,7 @@ func main() {
 func generator(msg string, quit chan string) <-chan string {
 	ch := make(chan string)
 	go func() {
-		for{
+		for {
 			select {
 			case ch <- fmt.Sprintf("%s", msg):
 			case <-quit:

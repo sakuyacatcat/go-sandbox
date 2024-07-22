@@ -8,13 +8,13 @@ import (
 )
 
 type UserData struct {
-	Age int `json:"Age"`
-	Job string `json:"Job"`
+	Age    int      `json:"Age"`
+	Job    string   `json:"Job"`
 	Skills []string `json:"Skills"`
 }
 
 type User struct {
-	Name string `json:"Name"`
+	Name string   `json:"Name"`
 	Data UserData `json:"Data"`
 }
 

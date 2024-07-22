@@ -24,7 +24,7 @@ func main() {
 	var wg sync.WaitGroup
 	wg.Add(1)
 
-	ctx, cancel := context.WithTimeout(context.Background(), 3 * time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 
 	defer cancel()
 

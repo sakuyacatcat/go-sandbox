@@ -4,14 +4,14 @@ import "fmt"
 
 type User struct {
 	Name string
-	Age int
+	Age  int
 }
 
 func main() {
 	// basic struct usage
 	var user User
 	user.Name = "Bob"
-	user.Age  = 20
+	user.Age = 20
 
 	// print struct without pointer. The value is copied every time.
 	fmt.Printf("%#v\n", user)

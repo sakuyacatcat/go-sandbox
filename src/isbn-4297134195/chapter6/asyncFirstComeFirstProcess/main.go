@@ -17,8 +17,10 @@ func fanIn(ch1, ch2 <-chan string) <-chan string {
 	go func() {
 		for {
 			select {
-			case s := <-ch1: newCh <- s
-			case s := <-ch2: newCh <- s
+			case s := <-ch1:
+				newCh <- s
+			case s := <-ch2:
+				newCh <- s
 			}
 		}
 	}()

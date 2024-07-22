@@ -10,10 +10,10 @@ type Server struct {
 }
 
 type serverParam struct {
-	host string
-	port int
+	host    string
+	port    int
 	timeout time.Duration
-	logger *log.Logger
+	logger  *log.Logger
 }
 
 func NewBuilder(host string, port int) *serverParam {

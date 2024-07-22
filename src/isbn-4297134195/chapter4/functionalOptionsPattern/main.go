@@ -8,7 +8,6 @@ import (
 	"github.com/sakuyacatcat/go-sandbox/src/isbn-4297134195/chapter4/functionalOptionsPattern/server"
 )
 
-
 func main() {
 	f, err := os.Create("server.log")
 	if err != nil {

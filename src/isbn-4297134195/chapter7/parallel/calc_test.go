@@ -7,8 +7,8 @@ import (
 func TestAdd(t *testing.T) {
 	tests := []struct {
 		name string
-		lhs int
-		rhs int
+		lhs  int
+		rhs  int
 		want int
 	}{
 		{name: "test1", lhs: 0, rhs: 1, want: 1},

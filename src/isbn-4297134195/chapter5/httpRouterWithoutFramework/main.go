@@ -11,9 +11,9 @@ type routerParam map[string]string
 type routerFunc func(routerParam, http.ResponseWriter, *http.Request)
 
 type routerItem struct {
-	method string
+	method  string
 	matcher *regexp.Regexp
-	fn routerFunc
+	fn      routerFunc
 }
 
 type router struct {
@@ -22,17 +22,17 @@ type router struct {
 
 func (rt *router) GET(prefix string, fn routerFunc) {
 	rt.items = append(rt.items, routerItem{
-		method: http.MethodGet,
+		method:  http.MethodGet,
 		matcher: regexp.MustCompile(prefix),
-		fn: fn,
+		fn:      fn,
 	})
 }
 
 func (rt *router) POST(prefix string, fn routerFunc) {
 	rt.items = append(rt.items, routerItem{
-		method: http.MethodPost,
+		method:  http.MethodPost,
 		matcher: regexp.MustCompile(prefix),
-		fn: fn,
+		fn:      fn,
 	})
 }
 

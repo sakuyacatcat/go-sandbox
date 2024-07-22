@@ -5,7 +5,6 @@ import (
 	"testing"
 )
 
-
 func TestStringDistance(t *testing.T) {
 	got := StringDistance("foo", "foh")
 
@@ -18,8 +17,8 @@ func TestStringDistance(t *testing.T) {
 func TestStringDistance2(t *testing.T) {
 	tests := []struct {
 		name string
-		lhs string
-		rhs string
+		lhs  string
+		rhs  string
 		want int
 	}{
 		{name: "lhs is longer than rhs", lhs: "foo", rhs: "fo", want: -1},

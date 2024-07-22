@@ -8,8 +8,8 @@ import (
 func TestStringDistanceWithTable(t *testing.T) {
 	tests := []struct {
 		name string
-		lhs string
-		rhs string
+		lhs  string
+		rhs  string
 		want int
 	}{
 		{name: "lhs is longer than rhs", lhs: "abc", rhs: "ab", want: -1},
@@ -23,7 +23,7 @@ func TestStringDistanceWithTable(t *testing.T) {
 
 	for _, tt := range tests {
 		got := StringDistance(tt.lhs, tt.rhs)
-		if !reflect.DeepEqual(tt.want, got)	{
+		if !reflect.DeepEqual(tt.want, got) {
 			t.Errorf("want %d, got %d", tt.want, got)
 		}
 	}

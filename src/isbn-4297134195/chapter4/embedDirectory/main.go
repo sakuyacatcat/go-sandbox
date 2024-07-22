@@ -28,6 +28,6 @@ func main() {
 		io.Copy(out, in)
 		out.Close()
 		in.Close()
-		log.Println("exported", "embed-" + path.Base(fi.Name()))
+		log.Println("exported", "embed-"+path.Base(fi.Name()))
 	}
 }

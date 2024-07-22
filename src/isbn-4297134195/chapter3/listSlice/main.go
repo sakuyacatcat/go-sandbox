@@ -21,7 +21,7 @@ func main() {
 	c := make([]int, 0, 100)
 	for i := 0; i < 200; i++ {
 		c = append(c, i)
-		if i % 10 == 0 {
+		if i%10 == 0 {
 			fmt.Println(len(c), cap(c))
 		}
 	}

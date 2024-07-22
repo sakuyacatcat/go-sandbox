@@ -7,8 +7,16 @@ import (
 
 func fanIn(ch1, ch2 <-chan string) <-chan string {
 	newCh := make(chan string)
-	go func() { for { newCh <- <-ch1 }}()
-	go func() { for { newCh <- <-ch2 }}()
+	go func() {
+		for {
+			newCh <- <-ch1
+		}
+	}()
+	go func() {
+		for {
+			newCh <- <-ch2
+		}
+	}()
 	return newCh
 }
 

@@ -8,7 +8,7 @@ type MyString string
 // type declaration for struct
 type User struct {
 	Name string
-	Age int
+	Age  int
 }
 
 func main() {

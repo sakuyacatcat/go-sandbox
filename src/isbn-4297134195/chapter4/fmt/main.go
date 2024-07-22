@@ -7,11 +7,11 @@ import (
 func main() {
 	type human struct {
 		name string
-		age int
+		age  int
 	}
 	s := &human{
 		name: "Alice",
-		age: 28,
+		age:  28,
 	}
 
 	fmt.Printf("%+v\n", s)

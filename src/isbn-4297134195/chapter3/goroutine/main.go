@@ -36,7 +36,7 @@ func race() {
 
 	go func() {
 		defer wg.Done()
-		for i := 0; i<10000; i++ {
+		for i := 0; i < 10000; i++ {
 			mu.Lock()
 			n++
 			mu.Unlock()
@@ -45,7 +45,7 @@ func race() {
 
 	go func() {
 		defer wg.Done()
-		for i := 0; i<10000; i++ {
+		for i := 0; i < 10000; i++ {
 			mu.Lock()
 			n++
 			mu.Unlock()
