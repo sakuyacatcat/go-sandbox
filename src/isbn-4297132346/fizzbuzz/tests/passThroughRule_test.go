@@ -2,6 +2,8 @@ package numberConverter
 
 import (
 	"testing"
+
+	"github.com/sakuyacatcat/fizzbuzz/pkg/domain/rules"
 )
 
 func TestPassThroughMatch(t *testing.T) {
@@ -27,7 +29,7 @@ func TestPassThroughMatch(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			passTroughRule := NewPassThroughRule()
+			passTroughRule := rules.NewPassThroughRule()
 			result := passTroughRule.Match(tt.inputStr, tt.inputNum)
 
 			if result != tt.expected {
@@ -54,7 +56,7 @@ func TestPassThroughApply(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			passThroughRule := NewPassThroughRule()
+			passThroughRule := rules.NewPassThroughRule()
 			result := passThroughRule.Apply(tt.inputStr, tt.inputNum)
 			if result != tt.expected {
 				t.Errorf("expected %v, got %v", tt.expected, result)

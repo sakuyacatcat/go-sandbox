@@ -1,10 +1,14 @@
-package numberConverter
+package services
+
+import (
+	"github.com/sakuyacatcat/fizzbuzz/pkg/domain/rules"
+)
 
 type NumberConverter struct {
-	rules []ReplaceRule
+	rules []rules.ReplaceRule
 }
 
-func NewNumberConverter(rules []ReplaceRule) *NumberConverter {
+func NewNumberConverter(rules []rules.ReplaceRule) *NumberConverter {
 	return &NumberConverter{rules: rules}
 }
 

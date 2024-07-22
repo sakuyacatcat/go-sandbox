@@ -2,6 +2,8 @@ package numberConverter
 
 import (
 	"testing"
+
+	"github.com/sakuyacatcat/fizzbuzz/pkg/domain/rules"
 )
 
 func TestApplyForCyclicNumberRule(t *testing.T) {
@@ -33,7 +35,7 @@ func TestApplyForCyclicNumberRule(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			cyclicNumberRule := NewCyclicNumberRule(tt.baseNum, tt.replaceStr)
+			cyclicNumberRule := rules.NewCyclicNumberRule(tt.baseNum, tt.replaceStr)
 			result := cyclicNumberRule.Apply(tt.inputStr, tt.inputNum)
 
 			if result != tt.expected {

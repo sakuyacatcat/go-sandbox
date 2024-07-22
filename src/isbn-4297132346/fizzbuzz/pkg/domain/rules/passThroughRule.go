@@ -1,4 +1,4 @@
-package numberConverter
+package rules
 
 import "strconv"
 
