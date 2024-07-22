@@ -1,24 +1,21 @@
 package numberConverter
 
-import "strings"
-
 type NumberConverter struct {
-	rules []ReplaceRule;
+	rules []ReplaceRule
 }
 
 func NewNumberConverter(rules []ReplaceRule) *NumberConverter {
-	return &NumberConverter{rules: rules};
+	return &NumberConverter{rules: rules}
 }
 
 func (nc *NumberConverter) Convert(n int) string {
-	var returnStrs []string;
+	returnStr := ""
 
 	for _, rule := range nc.rules {
-		result := rule.Replace(n);
-		if result != "" {
-			returnStrs = append(returnStrs, result);
+		if rule.Match(returnStr, n) {
+			returnStr = rule.Apply(returnStr, n)
 		}
 	}
 
-	return strings.Join(returnStrs, "");
+	return returnStr
 }

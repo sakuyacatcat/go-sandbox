@@ -33,16 +33,30 @@ func (m *MockReplaceRule) EXPECT() *MockReplaceRuleMockRecorder {
 	return m.recorder
 }
 
-// Replace mocks base method.
-func (m *MockReplaceRule) Replace(arg0 int) string {
+// Apply mocks base method.
+func (m *MockReplaceRule) Apply(arg0 string, arg1 int) string {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Replace", arg0)
+	ret := m.ctrl.Call(m, "Apply", arg0, arg1)
 	ret0, _ := ret[0].(string)
 	return ret0
 }
 
-// Replace indicates an expected call of Replace.
-func (mr *MockReplaceRuleMockRecorder) Replace(arg0 interface{}) *gomock.Call {
+// Apply indicates an expected call of Apply.
+func (mr *MockReplaceRuleMockRecorder) Apply(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Replace", reflect.TypeOf((*MockReplaceRule)(nil).Replace), arg0)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Apply", reflect.TypeOf((*MockReplaceRule)(nil).Apply), arg0, arg1)
+}
+
+// Match mocks base method.
+func (m *MockReplaceRule) Match(arg0 string, arg1 int) bool {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "Match", arg0, arg1)
+	ret0, _ := ret[0].(bool)
+	return ret0
+}
+
+// Match indicates an expected call of Match.
+func (mr *MockReplaceRuleMockRecorder) Match(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Match", reflect.TypeOf((*MockReplaceRule)(nil).Match), arg0, arg1)
 }

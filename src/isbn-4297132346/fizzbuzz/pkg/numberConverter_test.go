@@ -14,58 +14,64 @@ func TestConvert(t *testing.T) {
 		name     string
 		input    int
 		expected string
-		rules	func(ctrl *gomock.Controller) []ReplaceRule
+		rules    func(ctrl *gomock.Controller) []ReplaceRule
 	}{
 		{
-			name:     "Converts 1 with no rules",
+			name:     "convert with empty rules",
 			input:    1,
 			expected: "",
 			rules: func(ctrl *gomock.Controller) []ReplaceRule {
 				return []ReplaceRule{}
 			},
 		},
-		// {
-		// 	name:     "Converts 2 to a string",
-		// 	input:    2,
-		// 	expected: "2",
-		// 	rules: func(ctrl *gomock.Controller) []ReplaceRule {
-		// 		fizzMock := NewMockReplaceRule(ctrl)
-		// 		fizzMock.EXPECT().Replace(2).Return("").Times(1)
-
-		// 		buzzMock := NewMockReplaceRule(ctrl)
-		// 		buzzMock.EXPECT().Replace(2).Return("").Times(1)
-
-		// 		return []ReplaceRule{fizzMock, buzzMock}
-		// 	},
-		// },
 		{
-			name:     "Converts 3 to Fizz",
-			input:    3,
-			expected: "Fizz",
+			name:     "convert with one rule",
+			input:    1,
+			expected: "1",
+			rules: func(ctrl *gomock.Controller) []ReplaceRule {
+				passThroughRule := NewMockReplaceRule(ctrl)
+				passThroughRule.EXPECT().Match("", 1).Return(true).Times(1)
+				passThroughRule.EXPECT().Apply("", 1).Return("1").Times(1)
+
+				return []ReplaceRule{passThroughRule}
+			},
+		},
+		{
+			name:     "convert with two rules",
+			input:    1,
+			expected: "FizzBuzz",
 			rules: func(ctrl *gomock.Controller) []ReplaceRule {
 				fizzMock := NewMockReplaceRule(ctrl)
-				fizzMock.EXPECT().Replace(3).Return("Fizz")
+				fizzMock.EXPECT().Match("", 1).Return(true).Times(1)
+				fizzMock.EXPECT().Apply("", 1).Return("Fizz").Times(1)
 
 				buzzMock := NewMockReplaceRule(ctrl)
-				buzzMock.EXPECT().Replace(3).Return("").Times(1)
+				buzzMock.EXPECT().Match("Fizz", 1).Return(true).Times(1)
+				buzzMock.EXPECT().Apply("Fizz", 1).Return("FizzBuzz").Times(1)
 
 				return []ReplaceRule{fizzMock, buzzMock}
 			},
 		},
-		// {
-		// 	name:     "Converts 15 to FizzBuzz",
-		// 	input:    15,
-		// 	expected: "FizzBuzz",
-		// 	rules: func(ctrl *gomock.Controller) []ReplaceRule {
-		// 		fizzMock := NewMockReplaceRule(ctrl)
-		// 		fizzMock.EXPECT().Replace(15).Return("Fizz")
+		{
+			name:     "convert with three rules",
+			input:    1,
+			expected: "1",
+			rules: func(ctrl *gomock.Controller) []ReplaceRule {
+				fizzMock := NewMockReplaceRule(ctrl)
+				fizzMock.EXPECT().Match("", 1).Return(false).Times(1)
+				fizzMock.EXPECT().Apply("", 1).Return("Fizz").Times(0)
 
-		// 		buzzMock := NewMockReplaceRule(ctrl)
-		// 		buzzMock.EXPECT().Replace(15).Return("Buzz")
+				buzzMock := NewMockReplaceRule(ctrl)
+				buzzMock.EXPECT().Match("", 1).Return(false).Times(1)
+				buzzMock.EXPECT().Apply("", 1).Return("Buzz").Times(0)
 
-		// 		return []ReplaceRule{fizzMock, buzzMock}
-		// 	},
-		// },
+				passThroughRule := NewMockReplaceRule(ctrl)
+				passThroughRule.EXPECT().Match("", 1).Return(true).Times(1)
+				passThroughRule.EXPECT().Apply("", 1).Return("1").Times(1)
+
+				return []ReplaceRule{fizzMock, buzzMock, passThroughRule}
+			},
+		},
 	}
 
 	for _, tt := range tests {

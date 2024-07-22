@@ -11,6 +11,10 @@ run:
 	echo "Running..."
 	go run $(path)
 
+format:
+	echo "Formatting..."
+	go fmt ./...
+
 test:
 	echo "Testing..."
 	go test -v ./...
