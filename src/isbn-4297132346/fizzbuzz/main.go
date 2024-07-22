@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/sakuyacatcat/fizzbuzz/pkg/handler"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	fmt.Println("Starting FizzBuzz")
+
+	h := handler.NewHandler()
+	h.Handle()
+
+	fmt.Println("Ending FizzBuzz")
 }

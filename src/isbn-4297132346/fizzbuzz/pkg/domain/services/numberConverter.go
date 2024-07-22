@@ -4,6 +4,10 @@ import (
 	"github.com/sakuyacatcat/fizzbuzz/pkg/domain/rules"
 )
 
+type NumberConverterInterface interface {
+	Convert(int) string
+}
+
 type NumberConverter struct {
 	rules []rules.ReplaceRule
 }

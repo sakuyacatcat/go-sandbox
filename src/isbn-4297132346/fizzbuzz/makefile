@@ -1,3 +1,8 @@
+.PHONY: run
+run:
+	@echo "Running fizzbuzz..."
+	go run main.go
+
 .PHONY: test
 test:
 	@echo "Running tests..."
