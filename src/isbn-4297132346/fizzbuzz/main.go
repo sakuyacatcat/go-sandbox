@@ -7,10 +7,14 @@ import (
 )
 
 func main() {
-	fmt.Println("Starting FizzBuzz")
+	fmt.Println("#####################")
+	fmt.Println("# Starting FizzBuzz #")
+	fmt.Println("#####################")
 
 	h := handler.NewHandler()
 	h.Handle()
 
-	fmt.Println("Ending FizzBuzz")
+	fmt.Println("#####################")
+	fmt.Println("#  Ending FizzBuzz  #")
+	fmt.Println("#####################")
 }
