@@ -7,13 +7,13 @@ import (
 
 type RangePrinter struct {
 	converter services.NumberConverterInterface
-	output   views.OutputInterface
+	output    views.OutputInterface
 }
 
 func NewRangePrinter(nc services.NumberConverterInterface, so views.OutputInterface) *RangePrinter {
 	return &RangePrinter{
 		converter: nc,
-		output:   so,
+		output:    so,
 	}
 }
 

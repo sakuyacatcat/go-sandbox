@@ -9,19 +9,19 @@ import (
 func TestPassThroughMatch(t *testing.T) {
 	tests := []struct {
 		name     string
-		inputStr    string
+		inputStr string
 		inputNum int
 		expected bool
 	}{
 		{
 			name:     "match with empty string",
-			inputStr:    "",
+			inputStr: "",
 			inputNum: 1,
 			expected: true,
 		},
 		{
 			name:     "match with non-empty string",
-			inputStr:    "Fizz",
+			inputStr: "Fizz",
 			inputNum: 1,
 			expected: false,
 		},
@@ -42,13 +42,13 @@ func TestPassThroughMatch(t *testing.T) {
 func TestPassThroughApply(t *testing.T) {
 	tests := []struct {
 		name     string
-		inputStr    string
+		inputStr string
 		inputNum int
 		expected string
 	}{
 		{
 			name:     "apply with empty string",
-			inputStr:    "",
+			inputStr: "",
 			inputNum: 1,
 			expected: "1",
 		},
